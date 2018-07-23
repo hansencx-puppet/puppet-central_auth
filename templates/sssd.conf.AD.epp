@@ -30,3 +30,9 @@ override_homedir = <%= $override_homedir %>
 <% } -%>
 # Use this until we get version 1.12 of sssd
 case_sensitive = <%= $case_sensitive %>
+<% if $ad_gpo_access_control { -%>
+ad_gpo_access_control = <%= $ad_gpo_access_control %>
+<% } -%>
+<% if $ignore_group_members { -%>
+ignore_group_members = <%= $ignore_group_members %>
+<% } -%>
