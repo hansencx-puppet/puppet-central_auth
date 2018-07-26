@@ -1,6 +1,7 @@
 # Configuration for the central_auth  module
 class central_auth::config (
   # Class parameters are populated from External(hiera)/Defaults/Fail
+  String $dns_discovery_domain       = '',
   String $ad_gpo_access_control      = '',
   Boolean $ignore_group_members      = '',
   String $default_domain             = '',
@@ -169,6 +170,7 @@ class central_auth::config (
                                       dc                    => $dc,
                                       ad_gpo_access_control => $ad_gpo_access_control,
                                       ignore_group_members  => $ignore_group_members,
+                                      dns_discovery_domain  => $dns_discovery_domain
                                     } ),
       mode    => '0600',
       notify  => Exec['clean_sssd_cache.sh'],

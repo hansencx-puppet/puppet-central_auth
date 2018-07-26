@@ -36,3 +36,6 @@ ad_gpo_access_control = <%= $ad_gpo_access_control %>
 <% if $ignore_group_members { -%>
 ignore_group_members = <%= $ignore_group_members %>
 <% } -%>
+<% if $dns_discovery_domain { -%>
+dns_discovery_domain = <%= $dns_discovery_domain %>
+<% } -%>
