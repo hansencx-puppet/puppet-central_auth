@@ -5,7 +5,7 @@ class central_auth::config (
   String $ad_enabled_domains            = '',
   String $ad_site                       = '',
   String $ad_gpo_access_control         = '',
-  Boolean $use_fully_qualified_names    = '',
+  String $trusted_domain_1              = '',
   Boolean $ignore_group_members         = '',
   String $default_domain                = '',
   String $admin_server                  = lookup( 'central_auth::config::default_domain', String, 'first', '' ),
@@ -176,7 +176,7 @@ class central_auth::config (
                                       dns_discovery_domain          => $dns_discovery_domain,
                                       ad_enabled_domains            => $ad_enabled_domains,
                                       ad_site                       => $ad_site,
-                                      use_fully_qualified_names     => $use_fully_qualified_names,
+                                      trusted_domain_1              => $trusted_domain_1
                                     } ),
       mode    => '0600',
       notify  => Exec['clean_sssd_cache.sh'],

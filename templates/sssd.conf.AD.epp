@@ -39,12 +39,14 @@ ignore_group_members = <%= $ignore_group_members %>
 <% if $dns_discovery_domain { -%>
 dns_discovery_domain = <%= $dns_discovery_domain %>
 <% } -%>
-<% if $use_fully_qualified_names { -%>
-use_fully_qualified_names = <%= $use_fully_qualified_names %>
-<% } -%>
 <% if $ad_enabled_domains { -%>
 ad_enabled_domains = <%= $ad_enabled_domains %>
 <% } -%>
 <% if $ad_site { -%>
 ad_site = <%= $ad_site %>
+<% } -%>
+
+<% if $trusted_domain_1 { -%>
+[domain/<%= $default_domain.downcase/trusted_domain_1 %>]
+use_fully_qualified_names = false
 <% } -%>
