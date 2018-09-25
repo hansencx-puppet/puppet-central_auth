@@ -5,7 +5,7 @@ class central_auth::config (
   String $ad_enabled_domains         = '',
   String $ad_site                    = '',
   String $ad_gpo_access_control      = '',
-  String $use_fully_qualified_names  = '',
+  Boolean $use_fully_qualified_names = '',
   Boolean $ignore_group_members      = '',
   String $default_domain             = '',
   String $admin_server               = lookup( 'central_auth::config::default_domain', String, 'first', '' ),
