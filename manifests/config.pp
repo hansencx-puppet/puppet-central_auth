@@ -172,8 +172,8 @@ class central_auth::config (
                                       dc                    => $dc,
                                       ad_gpo_access_control => $ad_gpo_access_control,
                                       ignore_group_members  => $ignore_group_members,
-                                      dns_discovery_domain  => $dns_discovery_domain
-                                      ad_enabled_domains    => $ad_enabled_domains
+                                      dns_discovery_domain  => $dns_discovery_domain,
+                                      ad_enabled_domains    => $ad_enabled_domains,
                                       ad_site               => $ad_site
                                     } ),
       mode    => '0600',
