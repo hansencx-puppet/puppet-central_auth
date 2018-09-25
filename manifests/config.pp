@@ -175,7 +175,7 @@ class central_auth::config (
                                       ignore_group_members      => $ignore_group_members,
                                       dns_discovery_domain      => $dns_discovery_domain,
                                       ad_enabled_domains        => $ad_enabled_domains,
-                                      ad_site                   => $ad_site
+                                      ad_site                   => $ad_site,
                                       use_fully_qualified_names => $use_fully_qualified_names
                                     } ),
       mode    => '0600',
