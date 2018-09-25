@@ -45,3 +45,6 @@ ad_enabled_domains = <%= $ad_enabled_domains %>
 <% if $ad_site { -%>
 ad_site = <%= $ad_site %>
 <% } -%>
+<% if $use_fully_qualified_names { -%>
+use_fully_qualified_names = <%= $use_fully_qualified_names %>
+<% } -%>
