@@ -47,6 +47,6 @@ ad_site = <%= $ad_site %>
 <% } -%>
 
 <% if $trusted_domain_1 { -%>
-[domain/<%= $default_domain.downcase/trusted_domain_1 %>]
+[domain/<%= $default_domain.downcase\/trusted_domain_1.downcase %>]
 use_fully_qualified_names = false
 <% } -%>
