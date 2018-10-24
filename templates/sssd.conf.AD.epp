@@ -45,6 +45,12 @@ ad_enabled_domains = <%= $ad_enabled_domains %>
 <% if $ad_site { -%>
 ad_site = <%= $ad_site %>
 <% } -%>
+<% if $subdomain_inherit { -%>
+subdomain_inherit = <%= $subdomain_inherit %>
+<% } -%>
+<% if $krb5_auth_timeout{ -%>
+krb5_auth_timeout = <%= $krb5_auth_timeout%>
+<% } -%>
 
 <% if $trusted_domain_1 { -%>
 [domain/<%= $default_domain.downcase %>/<%= $trusted_domain_1.downcase %>]

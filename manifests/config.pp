@@ -1,6 +1,8 @@
 # Configuration for the central_auth  module
 class central_auth::config (
   # Class parameters are populated from External(hiera)/Defaults/Fail
+  String $subdomain_inherit             = '',
+  Integer $krb5_auth_timeout            = '',
   String $dns_discovery_domain          = '',
   String $ad_enabled_domains            = '',
   String $ad_site                       = '',
@@ -176,7 +178,9 @@ class central_auth::config (
                                       dns_discovery_domain          => $dns_discovery_domain,
                                       ad_enabled_domains            => $ad_enabled_domains,
                                       ad_site                       => $ad_site,
-                                      trusted_domain_1              => $trusted_domain_1
+                                      trusted_domain_1              => $trusted_domain_1,
+                                      subdomain_inherit             => $subdomain_inherit,
+                                      krb5_auth_timeout             => $krb5_auth_timeout
                                     } ),
       mode    => '0600',
       notify  => Exec['clean_sssd_cache.sh'],
