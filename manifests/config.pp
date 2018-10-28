@@ -2,7 +2,7 @@
 class central_auth::config (
   # Class parameters are populated from External(hiera)/Defaults/Fail
   String $subdomain_inherit             = '',
-  Integer $krb5_auth_timeout            = '',
+  Integer $krb5_auth_timeout            = 6,
   String $dns_discovery_domain          = '',
   String $ad_enabled_domains            = '',
   String $ad_site                       = '',
