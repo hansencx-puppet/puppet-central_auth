@@ -182,8 +182,8 @@ class central_auth::config (
                                       ad_site                           => $ad_site,
                                       trusted_domain_1                  => $trusted_domain_1,
                                       subdomain_inherit                 => $subdomain_inherit,
-                                      krb5_auth_timeout                 => $krb5_auth_timeout
-                                      trusted_domain_1_ad_server        => $trusted_domain_1_ad_server
+                                      krb5_auth_timeout                 => $krb5_auth_timeout,
+                                      trusted_domain_1_ad_server        => $trusted_domain_1_ad_server,
                                       trusted_domain_1_ad_backup_server => $trusted_domain_1_ad_backup_server
                                     } ),
       mode    => '0600',
