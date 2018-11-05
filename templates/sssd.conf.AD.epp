@@ -56,3 +56,9 @@ krb5_auth_timeout = <%= $krb5_auth_timeout%>
 [domain/<%= $default_domain.downcase %>/<%= $trusted_domain_1.downcase %>]
 use_fully_qualified_names = false
 <% } -%>
+<% if $trusted_domain_1_ad_server { -%>
+ad_server = <%= $trusted_domain_1_ad_server%>
+<% } -%>
+<% if $trusted_domain_1_ad_backup_server { -%>
+ad_backup_server = <%= $trusted_domain_1_ad_backup_server%>
+<% } -%>
