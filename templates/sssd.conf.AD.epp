@@ -7,7 +7,7 @@ config_file_version = 2
 
 [domain/<%= $default_domain.downcase %>]
 debug_level = 9
-<% if $ad_domain { -%>
+<% if $ad_domain != '' { -%>
 ad_domain = <%= $ad_domain.downcase %>
 <% } -%>
 <% if $ad_server { -%>
@@ -36,7 +36,7 @@ ad_gpo_access_control = <%= $ad_gpo_access_control %>
 <% if $ignore_group_members { -%>
 ignore_group_members = <%= $ignore_group_members %>
 <% } -%>
-<% if $dns_discovery_domain { -%>
+<% if $dns_discovery_domain != '' { -%>
 dns_discovery_domain = <%= $dns_discovery_domain %>
 <% } -%>
 <% if $ad_enabled_domains { -%>
@@ -45,20 +45,20 @@ ad_enabled_domains = <%= $ad_enabled_domains %>
 <% if $ad_site { -%>
 ad_site = <%= $ad_site %>
 <% } -%>
-<% if $subdomain_inherit { -%>
+<% if $subdomain_inherit != '' { -%>
 subdomain_inherit = <%= $subdomain_inherit %>
 <% } -%>
 <% if $krb5_auth_timeout{ -%>
 krb5_auth_timeout = <%= $krb5_auth_timeout%>
 <% } -%>
 
-<% if $trusted_domain_1 { -%>
+<% if $trusted_domain_1 != '' { -%>
 [domain/<%= $default_domain.downcase %>/<%= $trusted_domain_1.downcase %>]
 use_fully_qualified_names = false
 <% } -%>
-<% if $trusted_domain_1_ad_server { -%>
+<% if $trusted_domain_1_ad_server != '' { -%>
 ad_server = <%= $trusted_domain_1_ad_server%>
 <% } -%>
-<% if $trusted_domain_1_ad_backup_server { -%>
+<% if $trusted_domain_1_ad_backup_server != '' { -%>
 ad_backup_server = <%= $trusted_domain_1_ad_backup_server%>
 <% } -%>
