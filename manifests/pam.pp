@@ -32,7 +32,7 @@ class central_auth::pam (
 
   #class { 'authconfig': }
 
-  if $::osfamily == 'RedHat' and $::operatingsystemmajrelease == '8' and $pp_role = 'peace_rh8_dxx' {
+  if $::osfamily == 'RedHat' and $::operatingsystemmajrelease == '8' and $pp_role == 'peace_rh8_dxx' {
     file { [ '/etc/pam.d/system-auth', '/etc/pam.d/password-auth' ] :
       ensure  => file,
       content => epp('central_auth/peace-dxx-rhel-pam-auth', {
