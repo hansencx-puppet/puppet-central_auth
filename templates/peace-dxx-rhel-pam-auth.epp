@@ -1,8 +1,8 @@
 # THIS FILE IS MANAGED BY PUPPET #
 auth        required                                        pam_env.so
 auth        sufficient                                      pam_unix.so nullok try_first_pass
-auth        [default=1 ignore=ignore sucess=ok]             pam_succeed_if.so uid >= <%= $min_user_id %> quiet
-auth        [default=1 ignore=ignore sucess=ok]             pam_localuser.so
+auth        [default=1 ignore=ignore success=ok]            pam_succeed_if.so uid >= <%= $min_user_id %> quiet
+auth        [default=1 ignore=ignore success=ok]            pam_localuser.so
 auth        sufficient                                      pam_unix.so nullok try_first_pass
 auth        requisite                                       pam_succeed_if.so uid >= <%= $min_user_id %> quiet_success
 <% if $enable_sssd { -%>
