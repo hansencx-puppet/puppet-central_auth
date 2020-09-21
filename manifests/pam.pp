@@ -32,7 +32,22 @@ class central_auth::pam (
 
   #class { 'authconfig': }
 
-  if $::osfamily == 'RedHat' {
+  if $::osfamily == 'RedHat' and $::operatingsystemmajrelease == '8' and $pp_role = 'peace_rh8_dxx' {
+    file { [ '/etc/pam.d/system-auth', '/etc/pam.d/password-auth' ] :
+      ensure  => file,
+      content => epp('central_auth/peace-dxx-rhel-pam-auth', {
+                                                    enable_pam_access => $enable_pam_access,
+                                                    enable_sssd       => $enable_sssd,
+                                                    dcredit           => $dcredit,
+                                                    difok             => $difok,
+                                                    lcredit           => $lcredit,
+                                                    ucredit           => $ucredit,
+                                                    ocredit           => $ocredit,
+                                                    minlen            => $minlen,
+                                                    min_user_id       => $min_user_id,
+                                                  } ),
+    }
+  } elsif $::osfamily == 'RedHat' {
     file { [ '/etc/pam.d/system-auth', '/etc/pam.d/password-auth' ] :
       ensure  => file,
       content => epp('central_auth/rhel-pam-auth', {
