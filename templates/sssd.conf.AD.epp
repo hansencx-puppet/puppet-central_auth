@@ -1,12 +1,12 @@
 # FILE MANAGED BY PUPPET #
 [sssd]
-debug_level = 9
+debug_level = 0
 domains = <%= $default_domain.downcase %>
 services = nss, pam
 config_file_version = 2
 
 [domain/<%= $default_domain.downcase %>]
-debug_level = 9
+debug_level = 0
 <% if $ad_domain != '' { -%>
 ad_domain = <%= $ad_domain.downcase %>
 <% } -%>
